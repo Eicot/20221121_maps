@@ -15,13 +15,14 @@ function transformData(data) {
     })
     console.log("price=", price)
 
-    const shortlisted =[];
+    const shortlisted = [];
     for (let dataPoint of price){
-      if (dataPoint.price > 3000000 ) {
+      if (dataPoint.price > 300000 ) {
         shortlisted.push(dataPoint);
       }
     }
     console.log("shortlisted=", shortlisted);
+  
   }
 
 

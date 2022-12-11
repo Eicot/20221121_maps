@@ -22,4 +22,5 @@ chart.render()
 window.addEventListener("DOMContentLoaded", async function(){
     const data = await loadData();
 
+
 })
