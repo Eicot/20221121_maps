@@ -6,23 +6,42 @@ async function loadData() {
 
 loadData();
 
+function transformData(data) {
+    const price = data.map(function(dataPoint) {
+      return {
+        "price": dataPoint.resale_price,
+        "place": dataPoint.town
+      }
+    })
+    console.log("price=", price)
+
+    const shortlisted =[];
+    for (let dataPoint of price){
+      if (dataPoint.price > 3000000 ) {
+        shortlisted.push(dataPoint);
+      }
+    }
+    console.log("shortlisted=", shortlisted);
+  }
+
+
+
+
 // function transformData(data) {
-//     const price = data.map(function(dataPoint) {
-//       return {
-//         "price": dataPoint.resale_price,
-//         "place": dataPoint.town
-//       }
+//   let earnings = [];
+//   for (let dataPoint of data) {
+//     earnings.push({
+//       "amount": dataPoint.resale_price,
+//       "date": dataPoint.town
 //     })
-//     console.log("price", price)
+//     console.log (earnings)
+//   }
 // }
 
-function transformData(data) {
-  let earnings = [];
-  for (let dataPoint of data) {
-    earnings.push({
-      "amount": dataPoint.resale_price,
-      "date": dataPoint.town
-    })
-    console.log (earnings)
-  }
-}
+
+
+
+
+
+
+
