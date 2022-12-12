@@ -20,7 +20,14 @@ const chart = new ApexCharts(document.querySelector('#chart'), options);
 chart.render()
 
 window.addEventListener("DOMContentLoaded", async function(){
-    const data = await loadData();
+    const data = await loadData('data.js');
+    const series = transformData(data);
 
+    chart.updateSeries([
+        {
+            'name':'Sales',
+            'data': series
+        }
+    ])
 
 })

@@ -10,7 +10,7 @@ function transformData(data) {
     const price = data.map(function(dataPoint) {
       return {
         "price": dataPoint.resale_price,
-        "place": dataPoint.town
+        "month": dataPoint.month
       }
     })
     console.log("price=", price)
@@ -22,6 +22,22 @@ function transformData(data) {
       }
     }
     console.log("shortlisted=", shortlisted);
+
+    const series = [];
+    for (let dataPoint of shortlisted) {
+      const resalePrice = dataPoint.price;
+      const months = dataPoint.month;
+      console.log(resalePrice);
+      console.log(months);
+
+      series.push({
+        x: dataPoint.price,
+        y: dataPoint.month
+      })
+    }
+    
+    console.log(series);
+    return series;
   
   }
 
