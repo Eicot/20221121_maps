@@ -27,8 +27,8 @@ function transformData(data) {
     for (let dataPoint of shortlisted) {
       const resalePrice = dataPoint.price;
       const months = dataPoint.month;
-      console.log(resalePrice);
-      console.log(months);
+      // console.log(resalePrice);
+      // console.log(months);
 
       series.push({
         x: dataPoint.price,
@@ -36,7 +36,7 @@ function transformData(data) {
       })
     }
     
-    console.log(series);
+    // console.log(series);
     return series;
   
   }
