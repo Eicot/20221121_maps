@@ -27,15 +27,16 @@ window.addEventListener("DOMContentLoaded", async function(){
     // the loadData function is from data.js
     const data = await loadData('data.js');
     const series1 = transformData(data);
-    const seriesB = transformData1(data);
 
     // display the loaded data as a series in the chart
     chart.updateSeries([{
         'name':'Population',
         'data': series1
-    },
-    {
-        'name':'Growth',
-        'data': seriesB
-    }])
+    }
+    // ,
+    // {
+    //     'name':'Growth',
+    //     'data': seriesB
+    // }
+])
 })
