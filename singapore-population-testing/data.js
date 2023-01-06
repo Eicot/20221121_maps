@@ -8,10 +8,10 @@ loadData();
 
 
 function transformData1(data) {
-    const popt = data[1].map(function(dataPoint) {
+    const popt = data.map(function(dataPoint) {
         return {
-            "amount" : dataPoint.unit,
-            "year": dataPoint.date
+            "amount" : dataPoint.populationTotal,
+            "year": dataPoint.year
         }
     })
     console.log("population=", popt);
@@ -35,10 +35,10 @@ function transformData1(data) {
 }
 
 function transformData(data) {
-    const population = data[1].map(function(dataPoint) {
+    const population = data.map(function(dataPoint) {
         return {
-            "amount" : dataPoint.value,
-            "year": dataPoint.date
+            "amount" : dataPoint.populationFemale,
+            "year": dataPoint.year
         }
     })
     console.log("population=", population);

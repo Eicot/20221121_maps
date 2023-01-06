@@ -1,6 +1,6 @@
 const options =  {
     chart: {
-        type: 'bar',
+        type: 'line',
         height:"100%"
     },
     series:[
